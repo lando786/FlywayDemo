@@ -6,6 +6,7 @@ builder.Services.AddDbContext<TodoDb>(opt =>
 
 var app = builder.Build();
 
+app.MapGet("/", () => "Hello World!");
 app.MapGet("/todos", async (TodoDb db) => await db.Todos.AsNoTracking().ToListAsync());
 
 app.MapGet("/todos/{id:int}", async (int id, TodoDb db) =>
