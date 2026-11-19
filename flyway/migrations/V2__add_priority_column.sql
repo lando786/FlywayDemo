@@ -1,0 +1,1 @@
+ALTER TABLE dbo.Todo ADD Priority INT NOT NULL CONSTRAINT DF_Todo_Priority DEFAULT 0;

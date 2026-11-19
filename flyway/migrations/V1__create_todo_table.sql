@@ -1,0 +1,6 @@
+CREATE TABLE dbo.Todo (
+    Id         INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_Todo PRIMARY KEY,
+    Title      NVARCHAR(200)     NOT NULL,
+    IsComplete BIT               NOT NULL CONSTRAINT DF_Todo_IsComplete DEFAULT 0,
+    CreatedAt  DATETIME2         NOT NULL CONSTRAINT DF_Todo_CreatedAt DEFAULT SYSUTCDATETIME()
+);
